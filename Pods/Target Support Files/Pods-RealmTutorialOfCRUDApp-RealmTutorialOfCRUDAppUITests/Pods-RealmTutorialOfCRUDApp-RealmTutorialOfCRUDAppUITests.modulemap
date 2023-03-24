@@ -1,0 +1,6 @@
+framework module Pods_RealmTutorialOfCRUDApp_RealmTutorialOfCRUDAppUITests {
+  umbrella header "Pods-RealmTutorialOfCRUDApp-RealmTutorialOfCRUDAppUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

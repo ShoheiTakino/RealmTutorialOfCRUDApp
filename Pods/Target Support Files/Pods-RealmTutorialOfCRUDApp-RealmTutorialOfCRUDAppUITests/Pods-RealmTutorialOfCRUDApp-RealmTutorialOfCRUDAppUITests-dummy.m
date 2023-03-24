@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_RealmTutorialOfCRUDApp_RealmTutorialOfCRUDAppUITests : NSObject
+@end
+@implementation PodsDummy_Pods_RealmTutorialOfCRUDApp_RealmTutorialOfCRUDAppUITests
+@end

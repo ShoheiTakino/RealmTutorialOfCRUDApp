@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="108" id="nRO-hg-TrE" customClass="TodoListTableViewCell" customModule="RealmTutorialOfCRUDApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="392" height="108"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nRO-hg-TrE" id="GIA-QM-BnC">
+                <rect key="frame" x="0.0" y="0.0" width="392" height="108"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Rf-92-C7F">
+                        <rect key="frame" x="20.000000000000004" y="27" width="41.333333333333343" height="55"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日付" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pcr-xp-15R">
+                        <rect key="frame" x="357" y="44" width="35" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="1Rf-92-C7F" secondAttribute="bottom" constant="26" id="660-Jn-8Gc"/>
+                    <constraint firstItem="Pcr-xp-15R" firstAttribute="top" secondItem="GIA-QM-BnC" secondAttribute="top" constant="44" id="FbM-Vb-hPh"/>
+                    <constraint firstAttribute="trailing" secondItem="Pcr-xp-15R" secondAttribute="trailing" id="Qnm-6C-csh"/>
+                    <constraint firstItem="1Rf-92-C7F" firstAttribute="top" secondItem="GIA-QM-BnC" secondAttribute="top" constant="27" id="bIA-m5-iY0"/>
+                    <constraint firstItem="1Rf-92-C7F" firstAttribute="leading" secondItem="GIA-QM-BnC" secondAttribute="leading" constant="20" symbolic="YES" id="d44-ml-Rl3"/>
+                    <constraint firstAttribute="bottom" secondItem="Pcr-xp-15R" secondAttribute="bottom" constant="43" id="ud2-Xe-lpq"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="dateLabel" destination="Pcr-xp-15R" id="6yh-m0-hDO"/>
+                <outlet property="titleLabel" destination="1Rf-92-C7F" id="sc2-Zt-rSj"/>
+            </connections>
+            <point key="canvasLocation" x="138.46153846153845" y="82.464454976303315"/>
+        </tableViewCell>
+    </objects>
+</document>
