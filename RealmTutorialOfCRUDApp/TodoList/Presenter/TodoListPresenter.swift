@@ -13,7 +13,9 @@ protocol TodoListPresenterInput: AnyObject {
     func viewDidLoad()
     
     func tappedStoreButton(inputText: String)
-    func selectedTodoCell()
+    func selectedTodoCell(todo: TodoModel)
+    func updatedTodoItem()
+    func tappedDeleteAllTodosList()
 }
 
 // MARK: - Output
@@ -21,7 +23,8 @@ protocol TodoListPresenterInput: AnyObject {
 protocol TodoListPresenterOutput: AnyObject {
     func setupUI()
     func showTodoList(todos: [TodoModel])
-    func presentTodoDetaileVC()
+    func refreshTdodosList(todos: [TodoModel])
+    func presentTodoDetaileVC(todo: TodoModel)
 }
 
 // MARK: - Presenter
@@ -58,8 +61,24 @@ extension TodoListPresenter: TodoListPresenterInput {
         }
     }
     
-    func selectedTodoCell() {
-        view?.presentTodoDetaileVC()
+    func selectedTodoCell(todo: TodoModel) {
+        view?.presentTodoDetaileVC(todo: todo)
+    }
+    
+    func updatedTodoItem() {
+        fetchTodoList()
+    }
+    
+    func tappedDeleteAllTodosList() {
+        registerTodoUseCase.deleteAllTodosRequest { [weak self] result in
+            guard let strongSelf = self else { return }
+            switch result {
+            case .success:
+                strongSelf.view?.refreshTdodosList(todos: [])
+            case .failure:
+                break
+            }
+        }
     }
 }
 
