@@ -39,11 +39,19 @@ final class TodoListViewController: UIViewController {
         }
     }
     @IBOutlet private weak var inputedTextCountLabel: UILabel!
+    @IBOutlet private weak var deleteTodosListButton: UIButton! {
+        didSet {
+            deleteTodosListButton.layer.cornerRadius = 20
+        }
+    }
     
     // MARK: - IBAction
     
     @IBAction private func tappedRegisterButton() {
         presenter.tappedStoreButton(inputText: inputtedTodo)
+    }
+    @IBAction private func tappedDeleteTodosList() {
+        presenter.tappedDeleteAllTodosList()
     }
     
     // MARK: - Proparty
@@ -58,7 +66,8 @@ final class TodoListViewController: UIViewController {
         super.viewDidLoad()
         presenter = TodoListPresenter(view: self,
                                       registerTodoUseCase: RegisterTodoUseCase(registerTodoDataStore: RegisterTodoDataStore(),
-                                                                                           fetchTodoListDataStore: FetchTodoListDataStore()))
+                                                                               fetchTodoListDataStore: FetchTodoListDataStore(),
+                                                                               deleteAllTodosDataStore: DeleteAllTodosDataStore()))
         presenter.viewDidLoad()
     }
     
@@ -74,15 +83,18 @@ extension TodoListViewController: TodoListPresenterOutput {
     func showTodoList(todos: [TodoModel]) {
         todoList = todos
         todoListTableView.reloadData()
-        let inputedText = ""
         inputedTextCountLabel.text = "\(0) / 20文字"
         inputTodoTextField.text = ""
         inputtedTodo = ""
     }
     
     
-    func presentTodoDetaileVC() {
-        
+    func presentTodoDetaileVC(todo: TodoModel) {
+        let vc = TodoDetailViewController(todo: todo)
+        vc.delegate = self
+        vc.modalPresentationStyle = .fullScreen
+        vc.modalTransitionStyle = .coverVertical
+        present(vc, animated: true)
     }
     
     
@@ -90,7 +102,13 @@ extension TodoListViewController: TodoListPresenterOutput {
         
     }
     
-    
+    func refreshTdodosList(todos: [TodoModel]) {
+        todoList = todos
+        todoListTableView.reloadData()
+        inputedTextCountLabel.text = "\(0) / 20文字"
+        inputTodoTextField.text = ""
+        inputtedTodo = ""
+    }
 }
 
 // MARK: - Private
@@ -120,7 +138,8 @@ extension TodoListViewController:  UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter.selectedTodoCell()
+        let todo = todoList[indexPath.row]
+        presenter.selectedTodoCell(todo: todo)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
@@ -131,5 +150,14 @@ extension TodoListViewController: UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         view.endEditing(true)
+    }
+}
+
+// MARK: - TodoDetailViewControllerDelegate
+
+extension TodoListViewController: TodoDetailViewControllerDelegate {
+    
+    func deletedTodoItem() {
+        presenter.updatedTodoItem()
     }
 }

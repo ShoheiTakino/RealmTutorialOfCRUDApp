@@ -3,6 +3,7 @@
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -10,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TodoListViewController" customModule="RealmTutorialOfCRUDApp" customModuleProvider="target">
             <connections>
+                <outlet property="deleteTodosListButton" destination="h3d-dV-cKJ" id="2an-ys-0Fn"/>
                 <outlet property="inputTodoTextField" destination="r16-Oz-wvU" id="saH-kX-Eoh"/>
                 <outlet property="inputedTextCountLabel" destination="5Wp-Vg-gHq" id="aJu-Ms-9Ya"/>
                 <outlet property="registerButton" destination="nku-zH-pOA" id="DMs-Ay-y8X"/>
@@ -51,6 +53,23 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3d-dV-cKJ">
+                    <rect key="frame" x="252" y="36" width="99" height="43"/>
+                    <color key="backgroundColor" systemColor="systemRedColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="h3d-dV-cKJ" secondAttribute="height" multiplier="99:43" id="TTT-1K-Osd"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="すべて削除">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <imageReference key="image" image="delete.left.fill" catalog="system" symbolScale="small"/>
+                    </state>
+                    <connections>
+                        <action selector="tappedDeleteTodosList" destination="-1" eventType="touchUpInside" id="j5c-Yg-cBT"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -59,9 +78,12 @@
                 <constraint firstItem="nku-zH-pOA" firstAttribute="top" secondItem="r16-Oz-wvU" secondAttribute="bottom" constant="10" id="50r-Fi-mbk"/>
                 <constraint firstItem="5Wp-Vg-gHq" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="5ip-aY-jDz"/>
                 <constraint firstItem="DLp-po-WUf" firstAttribute="top" secondItem="nku-zH-pOA" secondAttribute="bottom" constant="8" symbolic="YES" id="CJw-2k-j8l"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="h3d-dV-cKJ" secondAttribute="trailing" constant="39" id="TTC-8n-gqF"/>
+                <constraint firstItem="h3d-dV-cKJ" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.253846" id="VHb-jL-aSu"/>
                 <constraint firstItem="DLp-po-WUf" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="XD4-aK-Y9P"/>
                 <constraint firstItem="nku-zH-pOA" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.830769" id="XDO-oL-t9x"/>
                 <constraint firstAttribute="bottom" secondItem="DLp-po-WUf" secondAttribute="bottom" id="ann-v0-x3k"/>
+                <constraint firstItem="h3d-dV-cKJ" firstAttribute="centerY" secondItem="5Wp-Vg-gHq" secondAttribute="centerY" id="cY7-v6-5qd"/>
                 <constraint firstItem="r16-Oz-wvU" firstAttribute="top" secondItem="5Wp-Vg-gHq" secondAttribute="bottom" constant="14" id="cbo-ut-bJq"/>
                 <constraint firstItem="r16-Oz-wvU" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="eau-Wl-PeN"/>
                 <constraint firstItem="nku-zH-pOA" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="oT1-pE-D89"/>
@@ -73,9 +95,13 @@
         </view>
     </objects>
     <resources>
+        <image name="delete.left.fill" catalog="system" width="128" height="102"/>
         <image name="note.text.badge.plus" catalog="system" width="128" height="108"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
