@@ -14,6 +14,7 @@ protocol TodoDetailPresenterInput: AnyObject {
     
     func tappedUpdateButton(newTitle: String)
     func tappedDeleteTodoButton()
+    func tappedBackButton()
 }
 
 // MARK: - Output
@@ -39,7 +40,7 @@ final class TodoDetailPresenter {
 }
 
 extension TodoDetailPresenter: TodoDetailPresenterInput {
-    
+
     func viewDidLoad(todo: TodoModel) {
         validationTitle = todo.title ?? ""
         view?.setup(todo: todo)
@@ -71,6 +72,10 @@ extension TodoDetailPresenter: TodoDetailPresenterInput {
                 break
             }
         }
+    }
+    
+    func tappedBackButton() {
+        view?.dismissDetaileVC()
     }
 }
 
