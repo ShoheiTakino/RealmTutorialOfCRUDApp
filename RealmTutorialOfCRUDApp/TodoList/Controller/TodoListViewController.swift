@@ -25,6 +25,8 @@ final class TodoListViewController: UIViewController {
                 forCellReuseIdentifier: "TodoListTableViewCell"
             )
             todoListTableView.registerCustomCell(TodoCell.self)
+            todoListTableView.refreshControl = refreshControl
+            refreshControl.addTarget(self, action: #selector(pulledTableView), for: .valueChanged)
         }
     }
     @IBOutlet private weak var registerButton: UIButton! {
@@ -44,11 +46,19 @@ final class TodoListViewController: UIViewController {
             deleteTodosListButton.layer.cornerRadius = 20
         }
     }
+    @IBOutlet private weak var sortListButton: UIButton! {
+        didSet {
+            sortListButton.layer.cornerRadius = 20
+        }
+    }
     
     // MARK: - IBAction
     
     @IBAction private func tappedRegisterButton() {
         presenter.tappedStoreButton(inputText: inputtedTodo)
+    }
+    @IBAction private func tappedSortButton() {
+        presenter.tappedSortButton(queryTitle: inputtedTodo)
     }
     @IBAction private func tappedDeleteTodosList() {
         presenter.tappedDeleteAllTodosList()
@@ -59,6 +69,7 @@ final class TodoListViewController: UIViewController {
     private var presenter: TodoListPresenterInput!
     private var inputtedTodo = ""
     private var todoList: [TodoModel] = []
+    private var refreshControl = UIRefreshControl()
     
     // MARK: - Lifecycle
     
@@ -67,7 +78,8 @@ final class TodoListViewController: UIViewController {
         presenter = TodoListPresenter(view: self,
                                       registerTodoUseCase: RegisterTodoUseCase(registerTodoDataStore: RegisterTodoDataStore(),
                                                                                fetchTodoListDataStore: FetchTodoListDataStore(),
-                                                                               deleteAllTodosDataStore: DeleteAllTodosDataStore()))
+                                                                               deleteAllTodosDataStore: DeleteAllTodosDataStore(),
+                                                                               fetchTodoListWithQueryDataStore: FetchTodoListWithQueryDataStore()))
         presenter.viewDidLoad()
     }
     
@@ -86,6 +98,7 @@ extension TodoListViewController: TodoListPresenterOutput {
         inputedTextCountLabel.text = "\(0) / 20文字"
         inputTodoTextField.text = ""
         inputtedTodo = ""
+        refreshControl.endRefreshing()
     }
     
     
@@ -96,18 +109,14 @@ extension TodoListViewController: TodoListPresenterOutput {
         vc.modalTransitionStyle = .coverVertical
         present(vc, animated: true)
     }
-    
-    
-    func setupUI() {
-        
-    }
-    
+
     func refreshTdodosList(todos: [TodoModel]) {
         todoList = todos
         todoListTableView.reloadData()
         inputedTextCountLabel.text = "\(0) / 20文字"
         inputTodoTextField.text = ""
         inputtedTodo = ""
+        refreshControl.endRefreshing()
     }
 }
 
@@ -119,6 +128,10 @@ private extension TodoListViewController {
         let inputedText = inputTodoTextField.text ?? ""
         inputedTextCountLabel.text = "\(inputedText.count) / 20文字"
         inputtedTodo = inputedText
+    }
+    
+    @objc func pulledTableView() {
+        presenter.pulledTableView()
     }
 }
 
