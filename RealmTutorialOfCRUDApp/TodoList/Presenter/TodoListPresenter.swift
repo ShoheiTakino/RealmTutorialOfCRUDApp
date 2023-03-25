@@ -12,16 +12,20 @@ import Foundation
 protocol TodoListPresenterInput: AnyObject {
     func viewDidLoad()
     
+    // MARK: Action
     func tappedStoreButton(inputText: String)
+    func tappedSortButton(queryTitle: String)
     func selectedTodoCell(todo: TodoModel)
-    func updatedTodoItem()
     func tappedDeleteAllTodosList()
+    func pulledTableView()
+    
+    // MARK: DelegateAction
+    func updatedTodoItem()
 }
 
 // MARK: - Output
 
 protocol TodoListPresenterOutput: AnyObject {
-    func setupUI()
     func showTodoList(todos: [TodoModel])
     func refreshTdodosList(todos: [TodoModel])
     func presentTodoDetaileVC(todo: TodoModel)
@@ -43,9 +47,8 @@ final class TodoListPresenter {
 // MARK: - TodoListPresenterInput
 
 extension TodoListPresenter: TodoListPresenterInput {
-
+    
     func viewDidLoad() {
-        view?.setupUI()
         fetchTodoList()
     }
     
@@ -60,9 +63,25 @@ extension TodoListPresenter: TodoListPresenterInput {
             }
         }
     }
+
+    func tappedSortButton(queryTitle: String) {
+        registerTodoUseCase.fetchTodoListWithQuery(query: queryTitle) { [weak self] result in
+            guard let storngSelf = self else { return }
+            switch result {
+            case .success(let list):
+                storngSelf.view?.showTodoList(todos: list)
+            case .failure:
+                break
+            }
+        }
+    }
     
     func selectedTodoCell(todo: TodoModel) {
         view?.presentTodoDetaileVC(todo: todo)
+    }
+    
+    func pulledTableView() {
+        fetchTodoList()
     }
     
     func updatedTodoItem() {
