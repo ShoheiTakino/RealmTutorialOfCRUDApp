@@ -35,6 +35,9 @@
 		5DFBDD8529CE5305004E0B78 /* UpdateTodoDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFBDD8429CE5305004E0B78 /* UpdateTodoDataStore.swift */; };
 		5DFBDD8829CED2EF004E0B78 /* DeleteAllTodosDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFBDD8729CED2EF004E0B78 /* DeleteAllTodosDataStore.swift */; };
 		5DFBDD8B29CEDBDA004E0B78 /* DeleteTodoDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFBDD8A29CEDBDA004E0B78 /* DeleteTodoDataStore.swift */; };
+		5DFBDD8E29CF0475004E0B78 /* FetchTodoListWithQueryDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFBDD8D29CF0475004E0B78 /* FetchTodoListWithQueryDataStore.swift */; };
+		5DFBDD9129CF09CA004E0B78 /* RealmDBConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFBDD9029CF09CA004E0B78 /* RealmDBConverter.swift */; };
+		5DFBDD9329CF0D12004E0B78 /* GenerateUUIDService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFBDD9229CF0D12004E0B78 /* GenerateUUIDService.swift */; };
 		9B005DF8C61600CECD36283C /* Pods_RealmTutorialOfCRUDApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8765AA0E5B4E0BE9E33D8EB0 /* Pods_RealmTutorialOfCRUDApp.framework */; };
 		D57D34727FC170202D46AB8B /* Pods_RealmTutorialOfCRUDApp_RealmTutorialOfCRUDAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1BA7DF170B203B300BB9B1F /* Pods_RealmTutorialOfCRUDApp_RealmTutorialOfCRUDAppUITests.framework */; };
 /* End PBXBuildFile section */
@@ -91,6 +94,9 @@
 		5DFBDD8429CE5305004E0B78 /* UpdateTodoDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTodoDataStore.swift; sourceTree = "<group>"; };
 		5DFBDD8729CED2EF004E0B78 /* DeleteAllTodosDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAllTodosDataStore.swift; sourceTree = "<group>"; };
 		5DFBDD8A29CEDBDA004E0B78 /* DeleteTodoDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTodoDataStore.swift; sourceTree = "<group>"; };
+		5DFBDD8D29CF0475004E0B78 /* FetchTodoListWithQueryDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchTodoListWithQueryDataStore.swift; sourceTree = "<group>"; };
+		5DFBDD9029CF09CA004E0B78 /* RealmDBConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDBConverter.swift; sourceTree = "<group>"; };
+		5DFBDD9229CF0D12004E0B78 /* GenerateUUIDService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateUUIDService.swift; sourceTree = "<group>"; };
 		8765AA0E5B4E0BE9E33D8EB0 /* Pods_RealmTutorialOfCRUDApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RealmTutorialOfCRUDApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ACB953EDA17A40F95B35735 /* Pods-RealmTutorialOfCRUDApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmTutorialOfCRUDApp.release.xcconfig"; path = "Target Support Files/Pods-RealmTutorialOfCRUDApp/Pods-RealmTutorialOfCRUDApp.release.xcconfig"; sourceTree = "<group>"; };
 		93C9009012C60103B90967F3 /* Pods-RealmTutorialOfCRUDApp-RealmTutorialOfCRUDAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmTutorialOfCRUDApp-RealmTutorialOfCRUDAppUITests.release.xcconfig"; path = "Target Support Files/Pods-RealmTutorialOfCRUDApp-RealmTutorialOfCRUDAppUITests/Pods-RealmTutorialOfCRUDApp-RealmTutorialOfCRUDAppUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -297,6 +303,8 @@
 		5DFBDD6E29CDCA93004E0B78 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				5DFBDD8F29CF0989004E0B78 /* Utils */,
+				5DFBDD8C29CF041D004E0B78 /* FetchTodoListWithQuery */,
 				5DFBDD8929CEDBC0004E0B78 /* DeleteTodo */,
 				5DFBDD8629CED2BA004E0B78 /* DeleteAllTodos */,
 				5DFBDD8329CE52E2004E0B78 /* UpdateTodo */,
@@ -319,6 +327,7 @@
 			isa = PBXGroup;
 			children = (
 				5DFBDD7329CDCB29004E0B78 /* TodoModel.swift */,
+				5DFBDD9229CF0D12004E0B78 /* GenerateUUIDService.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -379,6 +388,22 @@
 				5DFBDD8A29CEDBDA004E0B78 /* DeleteTodoDataStore.swift */,
 			);
 			name = DeleteTodo;
+			sourceTree = "<group>";
+		};
+		5DFBDD8C29CF041D004E0B78 /* FetchTodoListWithQuery */ = {
+			isa = PBXGroup;
+			children = (
+				5DFBDD8D29CF0475004E0B78 /* FetchTodoListWithQueryDataStore.swift */,
+			);
+			name = FetchTodoListWithQuery;
+			sourceTree = "<group>";
+		};
+		5DFBDD8F29CF0989004E0B78 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				5DFBDD9029CF09CA004E0B78 /* RealmDBConverter.swift */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -623,11 +648,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DFBDD5729CDB712004E0B78 /* TodoListViewController.swift in Sources */,
+				5DFBDD8E29CF0475004E0B78 /* FetchTodoListWithQueryDataStore.swift in Sources */,
 				5DFBDD6929CDBA11004E0B78 /* NSObjectProtocol+.swift in Sources */,
 				5DFBDD2729CDB32F004E0B78 /* ViewController.swift in Sources */,
 				5DFBDD8529CE5305004E0B78 /* UpdateTodoDataStore.swift in Sources */,
+				5DFBDD9329CF0D12004E0B78 /* GenerateUUIDService.swift in Sources */,
 				5DFBDD5B29CDB748004E0B78 /* TodoListPresenter.swift in Sources */,
 				5DFBDD8229CE513D004E0B78 /* TodoDetailUseCase.swift in Sources */,
+				5DFBDD9129CF09CA004E0B78 /* RealmDBConverter.swift in Sources */,
 				5DFBDD6429CDB9C2004E0B78 /* UITableView+.swift in Sources */,
 				5DFBDD7129CDCAC2004E0B78 /* RegisterTodoDataStore.swift in Sources */,
 				5DFBDD8029CDF404004E0B78 /* TodoDetailPresenter.swift in Sources */,
