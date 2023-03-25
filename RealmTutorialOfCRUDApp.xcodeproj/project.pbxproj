@@ -28,6 +28,13 @@
 		5DFBDD7129CDCAC2004E0B78 /* RegisterTodoDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFBDD7029CDCAC2004E0B78 /* RegisterTodoDataStore.swift */; };
 		5DFBDD7429CDCB29004E0B78 /* TodoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFBDD7329CDCB29004E0B78 /* TodoModel.swift */; };
 		5DFBDD7729CDD03A004E0B78 /* FetchTodoListDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFBDD7629CDD03A004E0B78 /* FetchTodoListDataStore.swift */; };
+		5DFBDD7C29CDF334004E0B78 /* TodoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFBDD7B29CDF334004E0B78 /* TodoDetailViewController.swift */; };
+		5DFBDD7E29CDF34F004E0B78 /* TodoDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DFBDD7D29CDF34F004E0B78 /* TodoDetailViewController.xib */; };
+		5DFBDD8029CDF404004E0B78 /* TodoDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFBDD7F29CDF404004E0B78 /* TodoDetailPresenter.swift */; };
+		5DFBDD8229CE513D004E0B78 /* TodoDetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFBDD8129CE513D004E0B78 /* TodoDetailUseCase.swift */; };
+		5DFBDD8529CE5305004E0B78 /* UpdateTodoDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFBDD8429CE5305004E0B78 /* UpdateTodoDataStore.swift */; };
+		5DFBDD8829CED2EF004E0B78 /* DeleteAllTodosDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFBDD8729CED2EF004E0B78 /* DeleteAllTodosDataStore.swift */; };
+		5DFBDD8B29CEDBDA004E0B78 /* DeleteTodoDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFBDD8A29CEDBDA004E0B78 /* DeleteTodoDataStore.swift */; };
 		9B005DF8C61600CECD36283C /* Pods_RealmTutorialOfCRUDApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8765AA0E5B4E0BE9E33D8EB0 /* Pods_RealmTutorialOfCRUDApp.framework */; };
 		D57D34727FC170202D46AB8B /* Pods_RealmTutorialOfCRUDApp_RealmTutorialOfCRUDAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1BA7DF170B203B300BB9B1F /* Pods_RealmTutorialOfCRUDApp_RealmTutorialOfCRUDAppUITests.framework */; };
 /* End PBXBuildFile section */
@@ -77,6 +84,13 @@
 		5DFBDD7029CDCAC2004E0B78 /* RegisterTodoDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTodoDataStore.swift; sourceTree = "<group>"; };
 		5DFBDD7329CDCB29004E0B78 /* TodoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoModel.swift; sourceTree = "<group>"; };
 		5DFBDD7629CDD03A004E0B78 /* FetchTodoListDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchTodoListDataStore.swift; sourceTree = "<group>"; };
+		5DFBDD7B29CDF334004E0B78 /* TodoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDetailViewController.swift; sourceTree = "<group>"; };
+		5DFBDD7D29CDF34F004E0B78 /* TodoDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodoDetailViewController.xib; sourceTree = "<group>"; };
+		5DFBDD7F29CDF404004E0B78 /* TodoDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDetailPresenter.swift; sourceTree = "<group>"; };
+		5DFBDD8129CE513D004E0B78 /* TodoDetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDetailUseCase.swift; sourceTree = "<group>"; };
+		5DFBDD8429CE5305004E0B78 /* UpdateTodoDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateTodoDataStore.swift; sourceTree = "<group>"; };
+		5DFBDD8729CED2EF004E0B78 /* DeleteAllTodosDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAllTodosDataStore.swift; sourceTree = "<group>"; };
+		5DFBDD8A29CEDBDA004E0B78 /* DeleteTodoDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTodoDataStore.swift; sourceTree = "<group>"; };
 		8765AA0E5B4E0BE9E33D8EB0 /* Pods_RealmTutorialOfCRUDApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RealmTutorialOfCRUDApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8ACB953EDA17A40F95B35735 /* Pods-RealmTutorialOfCRUDApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmTutorialOfCRUDApp.release.xcconfig"; path = "Target Support Files/Pods-RealmTutorialOfCRUDApp/Pods-RealmTutorialOfCRUDApp.release.xcconfig"; sourceTree = "<group>"; };
 		93C9009012C60103B90967F3 /* Pods-RealmTutorialOfCRUDApp-RealmTutorialOfCRUDAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RealmTutorialOfCRUDApp-RealmTutorialOfCRUDAppUITests.release.xcconfig"; path = "Target Support Files/Pods-RealmTutorialOfCRUDApp-RealmTutorialOfCRUDAppUITests/Pods-RealmTutorialOfCRUDApp-RealmTutorialOfCRUDAppUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -205,6 +219,7 @@
 		5DFBDD5329CDB6D1004E0B78 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				5DFBDD7829CDF30D004E0B78 /* TodoDetaile */,
 				5DFBDD5229CDB6B6004E0B78 /* TodoList */,
 			);
 			name = Presentation;
@@ -274,6 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				5DFBDD6C29CDCA2B004E0B78 /* RegisterTodoUseCase.swift */,
+				5DFBDD8129CE513D004E0B78 /* TodoDetailUseCase.swift */,
 			);
 			name = UseCase;
 			sourceTree = "<group>";
@@ -281,6 +297,9 @@
 		5DFBDD6E29CDCA93004E0B78 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				5DFBDD8929CEDBC0004E0B78 /* DeleteTodo */,
+				5DFBDD8629CED2BA004E0B78 /* DeleteAllTodos */,
+				5DFBDD8329CE52E2004E0B78 /* UpdateTodo */,
 				5DFBDD7529CDD028004E0B78 /* FetchTodoList */,
 				5DFBDD7229CDCB1D004E0B78 /* Model */,
 				5DFBDD6F29CDCA9E004E0B78 /* RegisterTodo */,
@@ -310,6 +329,56 @@
 				5DFBDD7629CDD03A004E0B78 /* FetchTodoListDataStore.swift */,
 			);
 			name = FetchTodoList;
+			sourceTree = "<group>";
+		};
+		5DFBDD7829CDF30D004E0B78 /* TodoDetaile */ = {
+			isa = PBXGroup;
+			children = (
+				5DFBDD7A29CDF320004E0B78 /* Presenter */,
+				5DFBDD7929CDF316004E0B78 /* Controller */,
+			);
+			path = TodoDetaile;
+			sourceTree = "<group>";
+		};
+		5DFBDD7929CDF316004E0B78 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				5DFBDD7B29CDF334004E0B78 /* TodoDetailViewController.swift */,
+				5DFBDD7D29CDF34F004E0B78 /* TodoDetailViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		5DFBDD7A29CDF320004E0B78 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				5DFBDD7F29CDF404004E0B78 /* TodoDetailPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		5DFBDD8329CE52E2004E0B78 /* UpdateTodo */ = {
+			isa = PBXGroup;
+			children = (
+				5DFBDD8429CE5305004E0B78 /* UpdateTodoDataStore.swift */,
+			);
+			name = UpdateTodo;
+			sourceTree = "<group>";
+		};
+		5DFBDD8629CED2BA004E0B78 /* DeleteAllTodos */ = {
+			isa = PBXGroup;
+			children = (
+				5DFBDD8729CED2EF004E0B78 /* DeleteAllTodosDataStore.swift */,
+			);
+			name = DeleteAllTodos;
+			sourceTree = "<group>";
+		};
+		5DFBDD8929CEDBC0004E0B78 /* DeleteTodo */ = {
+			isa = PBXGroup;
+			children = (
+				5DFBDD8A29CEDBDA004E0B78 /* DeleteTodoDataStore.swift */,
+			);
+			name = DeleteTodo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -422,6 +491,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DFBDD5929CDB729004E0B78 /* TodoListViewController.xib in Resources */,
+				5DFBDD7E29CDF34F004E0B78 /* TodoDetailViewController.xib in Resources */,
 				5DFBDD2F29CDB331004E0B78 /* LaunchScreen.storyboard in Resources */,
 				5DFBDD6029CDB913004E0B78 /* TodoListTableViewCell.xib in Resources */,
 				5DFBDD2C29CDB331004E0B78 /* Assets.xcassets in Resources */,
@@ -555,16 +625,22 @@
 				5DFBDD5729CDB712004E0B78 /* TodoListViewController.swift in Sources */,
 				5DFBDD6929CDBA11004E0B78 /* NSObjectProtocol+.swift in Sources */,
 				5DFBDD2729CDB32F004E0B78 /* ViewController.swift in Sources */,
+				5DFBDD8529CE5305004E0B78 /* UpdateTodoDataStore.swift in Sources */,
 				5DFBDD5B29CDB748004E0B78 /* TodoListPresenter.swift in Sources */,
+				5DFBDD8229CE513D004E0B78 /* TodoDetailUseCase.swift in Sources */,
 				5DFBDD6429CDB9C2004E0B78 /* UITableView+.swift in Sources */,
 				5DFBDD7129CDCAC2004E0B78 /* RegisterTodoDataStore.swift in Sources */,
+				5DFBDD8029CDF404004E0B78 /* TodoDetailPresenter.swift in Sources */,
 				5DFBDD2329CDB32F004E0B78 /* AppDelegate.swift in Sources */,
+				5DFBDD8829CED2EF004E0B78 /* DeleteAllTodosDataStore.swift in Sources */,
 				5DFBDD6629CDB9E9004E0B78 /* UITableViewCell+.swift in Sources */,
 				5DFBDD2529CDB32F004E0B78 /* SceneDelegate.swift in Sources */,
 				5DFBDD7429CDCB29004E0B78 /* TodoModel.swift in Sources */,
 				5DFBDD6D29CDCA2B004E0B78 /* RegisterTodoUseCase.swift in Sources */,
 				5DFBDD7729CDD03A004E0B78 /* FetchTodoListDataStore.swift in Sources */,
+				5DFBDD8B29CEDBDA004E0B78 /* DeleteTodoDataStore.swift in Sources */,
 				5DFBDD5E29CDB8F5004E0B78 /* TodoListTableViewCell.swift in Sources */,
+				5DFBDD7C29CDF334004E0B78 /* TodoDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
