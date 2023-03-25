@@ -36,6 +36,11 @@ final class TodoDetailViewController: UIViewController {
         }
     }
     
+    @IBOutlet private weak var backButton: UIButton! {
+        didSet {
+            backButton.layer.cornerRadius = 10
+        }
+    }
     
     @IBOutlet private weak var inputTextCountLabel: UILabel!
     
@@ -47,6 +52,10 @@ final class TodoDetailViewController: UIViewController {
     
     @IBAction private func tappedDeleteButton() {
         presenter?.tappedDeleteTodoButton()
+    }
+    
+    @IBAction private func tappedBackButton() {
+        presenter?.tappedBackButton()
     }
     
     // MARK: - Propartyycle
