@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TodoDetailViewController" customModule="RealmTutorialOfCRUDApp" customModuleProvider="target">
+            <connections>
+                <outlet property="deleteTodoButton" destination="Hbg-yp-cah" id="g6H-le-U5Q"/>
+                <outlet property="inputTextCountLabel" destination="rF6-dD-yoh" id="A9Z-bf-FoX"/>
+                <outlet property="newInputTodoTextField" destination="1Zt-0V-ekd" id="g8k-HO-FMn"/>
+                <outlet property="updateTodoButton" destination="IWH-dC-Gyu" id="iEv-YJ-tHM"/>
+                <outlet property="view" destination="iN0-l3-epB" id="3lj-Fk-W2a"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Zt-0V-ekd">
+                    <rect key="frame" x="16" y="405" width="358" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IWH-dC-Gyu">
+                    <rect key="frame" x="69" y="615" width="252" height="46"/>
+                    <color key="backgroundColor" systemColor="systemTealColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="IWH-dC-Gyu" secondAttribute="height" multiplier="126:23" id="EtC-aq-4lm"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="更新する"/>
+                    <connections>
+                        <action selector="tappedUpdateButton" destination="-1" eventType="touchUpInside" id="owY-FY-keg"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 / 20文字" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rF6-dD-yoh">
+                    <rect key="frame" x="155.66666666666666" y="353" width="79" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hbg-yp-cah">
+                    <rect key="frame" x="69" y="683" width="252" height="42"/>
+                    <color key="backgroundColor" systemColor="systemRedColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Hbg-yp-cah" secondAttribute="height" multiplier="6:1" id="ZvV-3B-UMY"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="削除する"/>
+                    <connections>
+                        <action selector="tappedDeleteButton" destination="-1" eventType="touchUpInside" id="Cpk-Nq-U3N"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="Hbg-yp-cah" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="0Si-eA-zg9"/>
+                <constraint firstItem="1Zt-0V-ekd" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="3jQ-BU-lTP"/>
+                <constraint firstItem="1Zt-0V-ekd" firstAttribute="top" secondItem="rF6-dD-yoh" secondAttribute="bottom" constant="31" id="CrC-i5-Sye"/>
+                <constraint firstItem="rF6-dD-yoh" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="DYR-dj-u6M"/>
+                <constraint firstItem="Hbg-yp-cah" firstAttribute="top" secondItem="IWH-dC-Gyu" secondAttribute="bottom" constant="22" id="Faw-zz-ecI"/>
+                <constraint firstItem="1Zt-0V-ekd" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="NR5-CO-0MA"/>
+                <constraint firstItem="1Zt-0V-ekd" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="SR8-e4-oNh"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Hbg-yp-cah" secondAttribute="bottom" constant="85" id="ZGB-jS-q6w"/>
+                <constraint firstItem="1Zt-0V-ekd" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.917949" id="d7Z-PI-Dfv"/>
+                <constraint firstItem="IWH-dC-Gyu" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.646154" id="enm-10-wpW"/>
+                <constraint firstItem="Hbg-yp-cah" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.646154" id="ma3-1l-0x5"/>
+                <constraint firstItem="IWH-dC-Gyu" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="xgZ-FT-9II"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="0.0" y="20.616113744075829"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
