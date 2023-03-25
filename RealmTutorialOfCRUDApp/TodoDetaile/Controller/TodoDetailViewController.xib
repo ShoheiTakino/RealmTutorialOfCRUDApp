@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TodoDetailViewController" customModule="RealmTutorialOfCRUDApp" customModuleProvider="target">
             <connections>
+                <outlet property="backButton" destination="DAg-Wu-3i9" id="cH9-xW-AvK"/>
                 <outlet property="deleteTodoButton" destination="Hbg-yp-cah" id="g6H-le-U5Q"/>
                 <outlet property="inputTextCountLabel" destination="rF6-dD-yoh" id="A9Z-bf-FoX"/>
                 <outlet property="newInputTodoTextField" destination="1Zt-0V-ekd" id="g8k-HO-FMn"/>
@@ -36,7 +37,7 @@
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <state key="normal" title="更新する"/>
+                    <state key="normal" title="更新する" image="icloud.and.arrow.up.fill" catalog="system"/>
                     <connections>
                         <action selector="tappedUpdateButton" destination="-1" eventType="touchUpInside" id="owY-FY-keg"/>
                     </connections>
@@ -56,9 +57,23 @@
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <state key="normal" title="削除する"/>
+                    <state key="normal" title="削除する" image="delete.left.fill" catalog="system"/>
                     <connections>
                         <action selector="tappedDeleteButton" destination="-1" eventType="touchUpInside" id="Cpk-Nq-U3N"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DAg-Wu-3i9">
+                    <rect key="frame" x="69" y="743" width="252" height="43"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="DAg-Wu-3i9" secondAttribute="height" multiplier="252:43" id="Wv2-0W-edh"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="戻る" image="escape" catalog="system"/>
+                    <connections>
+                        <action selector="tappedBackButton" destination="-1" eventType="touchUpInside" id="hfO-k5-5QU"/>
                     </connections>
                 </button>
             </subviews>
@@ -67,15 +82,18 @@
             <constraints>
                 <constraint firstItem="Hbg-yp-cah" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="0Si-eA-zg9"/>
                 <constraint firstItem="1Zt-0V-ekd" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="3jQ-BU-lTP"/>
+                <constraint firstItem="DAg-Wu-3i9" firstAttribute="top" secondItem="Hbg-yp-cah" secondAttribute="bottom" constant="18" id="4GH-T9-hWK"/>
+                <constraint firstItem="DAg-Wu-3i9" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.646154" id="6Sz-bU-e4M"/>
                 <constraint firstItem="1Zt-0V-ekd" firstAttribute="top" secondItem="rF6-dD-yoh" secondAttribute="bottom" constant="31" id="CrC-i5-Sye"/>
                 <constraint firstItem="rF6-dD-yoh" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="DYR-dj-u6M"/>
                 <constraint firstItem="Hbg-yp-cah" firstAttribute="top" secondItem="IWH-dC-Gyu" secondAttribute="bottom" constant="22" id="Faw-zz-ecI"/>
                 <constraint firstItem="1Zt-0V-ekd" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="NR5-CO-0MA"/>
                 <constraint firstItem="1Zt-0V-ekd" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="SR8-e4-oNh"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Hbg-yp-cah" secondAttribute="bottom" constant="85" id="ZGB-jS-q6w"/>
                 <constraint firstItem="1Zt-0V-ekd" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.917949" id="d7Z-PI-Dfv"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="DAg-Wu-3i9" secondAttribute="bottom" constant="24" id="eLm-J4-F40"/>
                 <constraint firstItem="IWH-dC-Gyu" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.646154" id="enm-10-wpW"/>
                 <constraint firstItem="Hbg-yp-cah" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.646154" id="ma3-1l-0x5"/>
+                <constraint firstItem="DAg-Wu-3i9" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="pBu-Cr-Vss"/>
                 <constraint firstItem="IWH-dC-Gyu" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="xgZ-FT-9II"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -83,6 +101,9 @@
         </view>
     </objects>
     <resources>
+        <image name="delete.left.fill" catalog="system" width="128" height="102"/>
+        <image name="escape" catalog="system" width="128" height="123"/>
+        <image name="icloud.and.arrow.up.fill" catalog="system" width="128" height="108"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
