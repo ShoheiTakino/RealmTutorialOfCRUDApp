@@ -21,17 +21,17 @@ final class FetchTodoListDataStore: FetchTodoListDataStoreInput {
         var todosList: Results<TodoModel>
         let realmDb = try! Realm()
         todosList = realmDb.objects(TodoModel.self)
-        completion(.success(converterToTodoModelList(item: todosList)))
+        completion(.success(RealmDBConverter.convertToModelFrom(object: todosList)))
     }
 }
 
-private extension FetchTodoListDataStore {
-    
-    func converterToTodoModelList(item: Results<TodoModel>) -> [TodoModel] {
-        var todoList: [TodoModel] = []
-        for i in 0..<item.count {
-            todoList.insert(item[i], at: 0)
-        }
-        return todoList
-    }
-}
+//private extension FetchTodoListDataStore {
+//    
+//    func converterToTodoModelList(item: Results<TodoModel>) -> [TodoModel] {
+//        var todoList: [TodoModel] = []
+//        for i in 0..<item.count {
+//            todoList.insert(item[i], at: 0)
+//        }
+//        return todoList
+//    }
+//}
