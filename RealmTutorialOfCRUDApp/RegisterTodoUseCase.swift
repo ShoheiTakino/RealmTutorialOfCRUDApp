@@ -13,20 +13,26 @@ protocol RegisterTodoUseCaseInput: AnyObject {
     func registerTodoRequest(inputText: String, completion: @escaping(Result<Void, Error>) -> Void)
     func fetchTodoList(completion: @escaping (Result<[TodoModel], Error>) -> Void)
     func deleteAllTodosRequest(completion: @escaping (Result<Void, Error>) -> Void)
+    func fetchTodoListWithQuery(query: String, completion: @escaping (Result<[TodoModel], Error>) -> Void)
 }
 
 // MARK: - UseCase
 
 final class RegisterTodoUseCase {
+    
     private let registerTodoDataStore: RegisterTodoDataStoreInput
     private let fetchTodoListDataStore: FetchTodoListDataStoreInput
     private let deleteAllTodosDataStore: DeleteAllTodosDataStoreInput
+    private let fetchTodoListWithQueryDataStore: FetchTodoListWithQueryDataStoreInput
+    
     init(registerTodoDataStore: RegisterTodoDataStoreInput,
          fetchTodoListDataStore: FetchTodoListDataStoreInput,
-         deleteAllTodosDataStore: DeleteAllTodosDataStoreInput) {
+         deleteAllTodosDataStore: DeleteAllTodosDataStoreInput,
+         fetchTodoListWithQueryDataStore: FetchTodoListWithQueryDataStoreInput) {
         self.registerTodoDataStore = registerTodoDataStore
         self.fetchTodoListDataStore = fetchTodoListDataStore
         self.deleteAllTodosDataStore = deleteAllTodosDataStore
+        self.fetchTodoListWithQueryDataStore = fetchTodoListWithQueryDataStore
     }
 }
 
@@ -40,6 +46,12 @@ extension RegisterTodoUseCase: RegisterTodoUseCaseInput {
     
     func fetchTodoList(completion: @escaping (Result<[TodoModel], Error>) -> Void) {
         fetchTodoListDataStore.fetchTodoList { result in
+            completion(result)
+        }
+    }
+    
+    func fetchTodoListWithQuery(query: String, completion: @escaping (Result<[TodoModel], Error>) -> Void) {
+        fetchTodoListWithQueryDataStore.fetchTodoListWithQuery(query: query) { result in
             completion(result)
         }
     }
